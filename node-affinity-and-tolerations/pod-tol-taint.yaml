@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-tol
+spec:
+  containers:
+  - name: nginx
+    image: nginx:1.14.2
+    ports:
+    - containerPort: 80
+  tolerations:
+  - key: "node.type"
+    operator: "Equal"
+    value: "b"
+    effect: "NoSchedule"

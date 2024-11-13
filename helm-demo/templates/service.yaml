@@ -1,0 +1,71 @@
+{{- if .Values.details }}
+apiVersion: v1
+kind: Service
+metadata:
+  name: details
+  labels:
+    app: details
+    service: details
+{{ include "mychart.commonLabels" . | indent 4 }}
+spec:
+  ports:
+    - port: {{ .Values.details.servicePort }}
+      name: http
+  selector:
+    app: details
+---
+{{- end }}
+
+{{- if .Values.ratings }}
+apiVersion: v1
+kind: Service
+metadata:
+  name: ratings
+  labels:
+    app: ratings
+    service: ratings
+{{ include "mychart.commonLabels" . | indent 4 }}
+spec:
+  ports:
+    - port: {{ .Values.ratings.servicePort }}
+      name: http
+  selector:
+    app: ratings
+---
+{{- end }}
+
+{{- if .Values.reviews }}
+apiVersion: v1
+kind: Service
+metadata:
+  name: reviews
+  labels:
+    app: reviews
+    service: reviews
+{{ include "mychart.commonLabels" . | indent 4 }}
+spec:
+  ports:
+    - port: {{ .Values.reviews.servicePort }}
+      name: http
+  selector:
+    app: reviews
+---
+{{- end }}
+
+{{- if .Values.productpage }}
+apiVersion: v1
+kind: Service
+metadata:
+  name: productpage
+  labels:
+    app: productpage
+    service: productpage
+{{ include "mychart.commonLabels" . | indent 4 }}
+spec:
+  ports:
+    - port: {{ .Values.productpage.servicePort }}
+      name: http
+  selector:
+    app: productpage
+---
+{{- end }}

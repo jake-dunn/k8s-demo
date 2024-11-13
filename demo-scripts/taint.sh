@@ -1,0 +1,1 @@
+kubectl taint nodes minikube-m03 node.type=b:NoSchedule

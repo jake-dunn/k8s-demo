@@ -1,0 +1,29 @@
+# Global variables
+replicaCount: 4
+image:
+  pullPolicy: IfNotPresent
+
+# Details service
+details:
+  image: docker.io/istio/examples-bookinfo-details-v1:1.20.1
+  servicePort: 9080
+
+# Ratings service
+ratings:
+  image: docker.io/istio/examples-bookinfo-ratings-v1:1.20.1
+  servicePort: 9080
+
+# Reviews service
+reviews:
+  v1:
+    image: docker.io/istio/examples-bookinfo-reviews-v1:1.20.1
+  v2:
+    image: docker.io/istio/examples-bookinfo-reviews-v2:1.20.1
+  v3:
+    image: docker.io/istio/examples-bookinfo-reviews-v3:1.20.1
+  servicePort: 9080
+
+# Productpage service
+productpage:
+  image: docker.io/istio/examples-bookinfo-productpage-v1:1.20.1
+  servicePort: 9080

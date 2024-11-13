@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: logging-config
+  namespace: development
+data:
+  LOG_DIR: /tmp/logs
